@@ -32,6 +32,13 @@ namespace Movie.Backend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Movie.Backend", Version = "v1" });
             });
+
+            services.AddCors(options => options.AddDefaultPolicy(builder =>
+            {
+                builder.AllowAnyOrigin()//.WithOrigins(corsWithOrigins)
+                       .AllowAnyHeader()
+                       .AllowAnyMethod();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,16 +51,21 @@ namespace Movie.Backend
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Movie.Backend v1"));
             }
 
+
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
+            app.UseCors();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+            
         }
     }
 }

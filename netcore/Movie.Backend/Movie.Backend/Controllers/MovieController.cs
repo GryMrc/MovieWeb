@@ -11,11 +11,11 @@ namespace Movie.Backend.Controllers
     [Route("api/[controller]/[action]")]
     public class MovieController : ControllerBase
     {
-        [HttpPost]
-        public Task<IActionResult> Create()
+        [HttpGet]
+        public async Task<IActionResult> Create()
         {
 
-            return null;
+            return Ok("connection succes");
         }
     }
 }
