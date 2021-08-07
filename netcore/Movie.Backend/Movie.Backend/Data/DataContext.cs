@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Movie.Backend.Models;
 
 namespace Movie.Backend.Data
 {
@@ -13,6 +14,6 @@ namespace Movie.Backend.Data
 
         }
 
-        public DbSet<Movie.Backend.Models.Movie> Movies { get; set; }
+        public DbSet<Movie.Backend.Models.MOV.Movie> Movies { get; set; }
     }
 }
