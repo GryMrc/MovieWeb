@@ -12,3 +12,6 @@
 
 **Çözüm** : Azure sql database kullandığım için karşılaştığım bir hata. appsetting.json içersinde connection string şu şekilde düzenlendi (Trusted_Connection=False;Encrypt=True;)
 
+**Problem** :  IIS Express (backend) modunda çalıştırılmayınca front'tan istek gitmiyor.
+
+**Çözüm** : IIS expresste çalıştırılacaks
