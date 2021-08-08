@@ -14,4 +14,6 @@
 
 **Problem** :  IIS Express (backend) modunda çalıştırılmayınca front'tan istek gitmiyor.
 
-**Çözüm** : IIS expresste çalıştırılacaks
+**Çözüm** : IIS expresste çalıştırılacak.
+
+**Problem** : Git Global Config gerekiyor olabilir.
