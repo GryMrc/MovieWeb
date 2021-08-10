@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.Backend", "Movie.Backend\Movie.Backend.csproj", "{5091AB08-5BF4-4BD5-A612-381DEF2E21FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mov.Mutual", "Mov.Mutual\Mov.Mutual.csproj", "{3B6DDEFA-085D-493B-81E5-48C55FABF048}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mov.DataModels", "Mov.DataModels\Mov.DataModels.csproj", "{5BD56E18-DD31-4FE6-A1C8-C83BA0CA50E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mov.ServicesContrats", "Mov.ServicesContrats\Mov.ServicesContrats.csproj", "{305310A9-0409-4F1F-A6D3-872706C9E15E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mov.Services", "Mov.Services\Mov.Services.csproj", "{E512DB93-F287-41D4-82FF-6B7B287AC5C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mov.Controllers", "Mov.Controllers\Mov.Controllers.csproj", "{3F585ACF-C341-4761-9D3F-DB5B7ECB10E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +19,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5091AB08-5BF4-4BD5-A612-381DEF2E21FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5091AB08-5BF4-4BD5-A612-381DEF2E21FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5091AB08-5BF4-4BD5-A612-381DEF2E21FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5091AB08-5BF4-4BD5-A612-381DEF2E21FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B6DDEFA-085D-493B-81E5-48C55FABF048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B6DDEFA-085D-493B-81E5-48C55FABF048}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B6DDEFA-085D-493B-81E5-48C55FABF048}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B6DDEFA-085D-493B-81E5-48C55FABF048}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BD56E18-DD31-4FE6-A1C8-C83BA0CA50E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BD56E18-DD31-4FE6-A1C8-C83BA0CA50E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BD56E18-DD31-4FE6-A1C8-C83BA0CA50E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BD56E18-DD31-4FE6-A1C8-C83BA0CA50E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{305310A9-0409-4F1F-A6D3-872706C9E15E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{305310A9-0409-4F1F-A6D3-872706C9E15E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{305310A9-0409-4F1F-A6D3-872706C9E15E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{305310A9-0409-4F1F-A6D3-872706C9E15E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E512DB93-F287-41D4-82FF-6B7B287AC5C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E512DB93-F287-41D4-82FF-6B7B287AC5C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E512DB93-F287-41D4-82FF-6B7B287AC5C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E512DB93-F287-41D4-82FF-6B7B287AC5C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F585ACF-C341-4761-9D3F-DB5B7ECB10E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F585ACF-C341-4761-9D3F-DB5B7ECB10E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F585ACF-C341-4761-9D3F-DB5B7ECB10E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F585ACF-C341-4761-9D3F-DB5B7ECB10E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

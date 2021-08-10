@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "Mov.Services": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:37031",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+        }
+      }
+    }
+  }
+

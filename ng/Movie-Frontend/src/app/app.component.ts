@@ -11,7 +11,6 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit {
   title : string = 'no connection was found';
   
-
   constructor(private httpClient: HttpClient){
     
   }
@@ -21,8 +20,8 @@ export class AppComponent implements OnInit {
  }
 
   httpRequest(){
-    this.httpClient.get("https://localhost:44339/api/Movie/Create",{responseType : 'text'}).subscribe(result => {
-   this.title = result;    
+    this.httpClient.post("http://localhost:5869/api/Authenticate/Register",this.title).subscribe(result => {
+    this.title = result.toString();
   })
 }
 

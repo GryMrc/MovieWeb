@@ -2,19 +2,19 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Movie.Backend.Data;
+using Mov.Services.Authenticate;
+using Mov.ServicesContrats.Authenticate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Movie.Backend
+namespace Mov.Controllers
 {
     public class Startup
     {
@@ -28,15 +28,15 @@ namespace Movie.Backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-      
 
+            services.AddControllers();
             services.AddCors(options => options.AddDefaultPolicy(builder =>
             {
                 builder.AllowAnyOrigin()//.WithOrigins(corsWithOrigins)
                        .AllowAnyHeader()
                        .AllowAnyMethod();
             }));
+            services.AddScoped<IAuthenticateService, AuthenticateService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,23 +45,20 @@ namespace Movie.Backend
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-               
             }
-
-
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseCors();
 
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
-            
         }
     }
 }
