@@ -30,7 +30,8 @@ namespace Mov.Mutual
             modelBuilder.Entity<User>().HasMany(m => m.Movies)// bu alan iki tablonun silinme isleminde karmasikliga
                 .WithOne(u => u.User)                         //sebep oldugu icin eklendi.  
                 .HasForeignKey(t => t.UserId) // User(Admin) silindiginde film tablosuna hicbir sey yapma (User soft delete yapilmali)
-                .OnDelete(DeleteBehavior.NoAction); // Update icin aynisi olacak mi?? Burda yapilamiyor.
+                .OnDelete(DeleteBehavior.NoAction); // Update icin gerek yok cunku Id tutuldugu icin update edilemez bir alan.
+                                                   // burada iliskiyi dogru vermek lazım yani enttiy kısmı icinde liste tutan kısım olmali.
          
         }
     }
