@@ -15,11 +15,15 @@ namespace Mov.DataModels.User
         public int Id { get; set; }
         [Column("USER_NAME")]
         public string UserName { get; set; }
-        public string Password { get; set; }
+        public byte[] PasswordHash { get; set; }
+        public byte[] PasswordSalt { get; set; }
         [Column("PRIVILEGE")]
         public int PrivilegeId { get; set; }
         public Privilege Privilege { get; set; }
         public List<Director> Directors { get; set; }
         public List<Movie> Movies { get; set; }
+
+        [NotMapped]
+        public string password { get; set; }
     }
 }

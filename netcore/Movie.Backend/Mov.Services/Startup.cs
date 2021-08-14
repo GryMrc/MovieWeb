@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Mov.Core;
 using Mov.Mutual;
+using ProtoBuf.Grpc.Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,18 +23,24 @@ namespace Mov.Services
         }
 
         public IConfiguration Configuration { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
+        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddControllers();
             Action<DbContextOptionsBuilder> contextOptions = (options) =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
-                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             };
-            services.AddDbContext<ApplicationDbContext>(contextOptions);
+            services.AddMapping("*.DataModels.dll");
+            services
+                   .AddDbContext<ApplicationDbContext>(contextOptions)
+                   .AddCodeFirstGrpc(options =>
+                   {
+                       options.Interceptors.Add(typeof(ErrorHandlingInterceptor));
+                       options.Interceptors.Add(typeof(CallContextInterceptor));
+                   });
+            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,17 +51,16 @@ namespace Mov.Services
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
             app.UseRouting();
-
-            //Use.cors()
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapModuleServices();
+                endpoints.MapGet("/", async context =>
+                {
+
+                    await context.Response.WriteAsync("Hello World!");
+                });
             });
         }
     }

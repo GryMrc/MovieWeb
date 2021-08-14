@@ -1,5 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { User } from './model/user.model';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AppComponent implements OnInit {
-  title : string = 'no connection was found';
+  title : User = new User();
   
   constructor(private httpClient: HttpClient){
     
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit {
 
   httpRequest(){
     this.httpClient.post("http://localhost:5869/api/Authenticate/Register",this.title).subscribe(result => {
-    this.title = result.toString();
+     console.log(result.toString());
   })
 }
 

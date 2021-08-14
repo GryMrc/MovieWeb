@@ -22,9 +22,9 @@ namespace Mov.Controllers.Authenticate
         }
 
         [HttpPost]
-        public async Task<ServiceResponse> Register(string title)
+        public async  Task<string> Register(User user)
         {
-            return await _authenticateService.Register(title);
+             return await _authenticateService.Register(user);
         }
     }
 }

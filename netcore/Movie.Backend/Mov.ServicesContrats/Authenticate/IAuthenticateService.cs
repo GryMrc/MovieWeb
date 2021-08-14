@@ -1,17 +1,21 @@
-﻿using Mov.DataModels.ServiceResponse;
+﻿using Mov.Core;
 using Mov.DataModels.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Mov.ServicesContrats.Authenticate
 {
-   public  interface IAuthenticateService
+   [ServiceContract]
+   public  interface IAuthenticateService:Interface1
     {
-        Task<ServiceResponse> Register(string user); // sadece username ve password olacak.
+        void myfunc(string x);
 
-        Task<ServiceResponse> Authenticate(User user);
+        
+        Task<string> Register(User my); // sadece username ve password olacak.
+
     }
 }

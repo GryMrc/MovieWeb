@@ -1,5 +1,5 @@
-﻿using Mov.DataModels.ServiceResponse;
-using Mov.DataModels.User;
+﻿using Mov.DataModels.User;
+using Mov.Mutual;
 using Mov.ServicesContrats.Authenticate;
 using System;
 using System.Collections.Generic;
@@ -10,14 +10,24 @@ namespace Mov.Services.Authenticate
 {
     public class AuthenticateService : IAuthenticateService
     {
-        public async Task<ServiceResponse> Authenticate(User user)
+        private readonly ApplicationDbContext context;
+
+        public AuthenticateService(ApplicationDbContext context)
         {
-            throw new NotImplementedException();
+            this.context = context;
         }
 
-        public async Task<ServiceResponse> Register(string user)
+        public void myfunc(string x)
         {
-            return ServiceResponse.SuccessfulResponse();
+            return;
+        }
+
+        public async Task<string> Register(User my)
+        {
+            //ajsdjsadadja
+            //jaksdkjashdkjsahd
+            var a = "asdas";
+            return a;
         }
     }
 }
