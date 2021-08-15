@@ -28,6 +28,9 @@ namespace Mov.Controllers
         private void ConfigureMappings()
         {
             CreateMap<DataModels.User.User, ViewModels.User.User>().ReverseMap();
+            CreateMap<DataModels.User.Privilege, ViewModels.User.Privilege>().ReverseMap();
+            CreateMap<DataModels.Crew.Director, ViewModels.Crew.Director>().ReverseMap();
+            CreateMap<DataModels.Movies.Movie, ViewModels.Movies.Movie>().ReverseMap();
         }
     }
 }

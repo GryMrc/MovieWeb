@@ -16,5 +16,8 @@ namespace Mov.ViewModels.User
         public string UserName { get; set; }
         public int PrivilegeId { get; set; }
         public string password { get; set; }
+        public Privilege Privilege { get; set; }
+        public List<Director> Directors { get; set; }
+        public List<Movie> Movies { get; set; }
     }
 }
