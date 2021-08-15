@@ -34,7 +34,7 @@ namespace Mov.Controllers
         {
             services.AddControllers();
             services
-                .addservicegrp("http://localhost:5000");
+                .addservicegrp("http://localhost:5000"); // Without Grpc 
             services.AddCors(options => options.AddDefaultPolicy(builder =>
             {
                 builder.AllowAnyOrigin()//.WithOrigins(corsWithOrigins)
