@@ -27,7 +27,8 @@ namespace Mov.Controllers
         /// </summary>
         private void ConfigureMappings()
         {
-            CreateMap<DataModels.User.User, ViewModels.User.User>().ReverseMap();
+            CreateMap<DataModels.User.User, ViewModels.User.User>().ReverseMap(); // model icindeki modellerde maplenebilmesi icin gerekli butun modeller mapplenmeli
+            CreateMap<DataModels.User.Privilege, ViewModels.User.Privilege>().ReverseMap();
         }
     }
 }

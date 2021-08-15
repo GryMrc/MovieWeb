@@ -95,5 +95,10 @@ namespace Mov.Services.Authenticate
 
             return null;
         }
+
+        public async Task<List<User>> GetUsers()
+        {
+            return await context.Users.Where(u => u.UserName == "Guray").Include(p => p.Privilege).ToListAsync();
+        }
     }
 }

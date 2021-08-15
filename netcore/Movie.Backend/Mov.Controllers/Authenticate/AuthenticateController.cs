@@ -37,5 +37,11 @@ namespace Mov.Controllers.Authenticate
             var a = _mapper.Map<DataModels.User.User>(user);
             return Ok(await _authenticateService.Login(a));
         }
+
+        [HttpGet]
+        public async Task<List<User>> GetUsers()
+        {
+            return _mapper.Map<List<User>>(await _authenticateService.GetUsers());
+        }
     }
 }

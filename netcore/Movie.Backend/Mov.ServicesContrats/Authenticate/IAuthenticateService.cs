@@ -17,6 +17,7 @@ namespace Mov.ServicesContrats.Authenticate
         
         Task<ServiceResponse> Register(User user);
         Task<ServiceResponse> Login(User user);
+        Task<List<User>> GetUsers();
 
     }
 }
