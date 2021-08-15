@@ -1,5 +1,6 @@
 ﻿using Mov.DataModels.Crew;
 using Mov.DataModels.Movies;
+using ProtoBuf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Mov.DataModels.User
 {
+    [ProtoContract(ImplicitFields = ImplicitFields.AllPublic)]
     public class User
     {
         [Column("USERID")]

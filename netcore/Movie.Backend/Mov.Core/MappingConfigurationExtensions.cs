@@ -18,6 +18,7 @@ namespace Mov.Core
             {
                 profileAssemblies.Add(AssemblyLoadContext.Default.LoadFromAssemblyPath(libraryFile));
             }
+            
             return services.AddAutoMapper(profileAssemblies).AddTransient<IMapper, Mapper>();
         }
     }

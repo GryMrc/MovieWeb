@@ -1,4 +1,5 @@
 ﻿using Mov.DataModels.Movies;
+using ProtoBuf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mov.DataModels.Crew
 {
+    [ProtoContract(ImplicitFields = ImplicitFields.AllPublic)]
     public class Director
     {
         [Column("DIRECTORID")]

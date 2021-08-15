@@ -31,7 +31,6 @@ namespace Mov.Services
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             };
-            services.AddMapping("*.DataModels.dll");
             services
                    .AddDbContext<ApplicationDbContext>(contextOptions)
                    .AddCodeFirstGrpc(options =>

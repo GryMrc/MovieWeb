@@ -34,10 +34,11 @@ namespace Mov.Controllers
         {
             services.AddControllers();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<Interface2, ProtobufSerializer>();
             services.AddOptions()
                 .AddSingleton<Class4>()
                 .AddTransient<Class5>()
-                .AddGrpcServiceClients("http://localhost:5000");
+                .addservicegrp("http://localhost:5000");
             services.AddCors(options => options.AddDefaultPolicy(builder =>
             {
                 builder.AllowAnyOrigin()//.WithOrigins(corsWithOrigins)

@@ -62,7 +62,7 @@ namespace Mov.Core
                 AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport",true);
 
                 var channel = GrpcChannel.ForAddress(url);
-                foreach (string contractLibraryFile in Directory.GetFiles(AppContext.BaseDirectory, "Mov.ServicesContracts.dll"))
+                foreach (string contractLibraryFile in Directory.GetFiles(AppContext.BaseDirectory, "Mov.ServicesContrats.dll"))
                 {
                     var contractAssembly = AssemblyLoadContext.Default.LoadFromAssemblyPath(contractLibraryFile);
                     foreach (var contractType in contractAssembly.GetTypes().Where(t => t.GetCustomAttributes(typeof(ServiceContractAttribute), false).Length > 0))
