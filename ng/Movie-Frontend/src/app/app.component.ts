@@ -1,6 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './model/user.model';
+import { ServiceResponse } from './model/serviceResponse.model';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { User } from './model/user.model';
 
 @Injectable()
 export class AppComponent implements OnInit {
-  title : User = new User();
+  user : User = new User();
+  response : ServiceResponse = new ServiceResponse();
   
   constructor(private httpClient: HttpClient){
     
@@ -21,8 +23,8 @@ export class AppComponent implements OnInit {
  }
 
   httpRequest(){
-    this.httpClient.post("http://localhost:5869/api/Authenticate/Register",this.title).subscribe(result => {
-     console.log(result.toString());
+    this.httpClient.post<ServiceResponse>("http://localhost:5869/api/Authenticate/Login",this.user).subscribe(result => {
+     console.log(result);
   })
 }
 

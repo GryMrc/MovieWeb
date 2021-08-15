@@ -5,12 +5,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Mov.DataModels.User
 {
     [ProtoContract(ImplicitFields = ImplicitFields.AllPublic)]
+    [DataContract]
     public class User
     {
         [Column("USERID")]
@@ -21,9 +23,9 @@ namespace Mov.DataModels.User
         public byte[] PasswordSalt { get; set; }
         [Column("PRIVILEGE")]
         public int PrivilegeId { get; set; }
-        public Privilege Privilege { get; set; }
-        public List<Director> Directors { get; set; }
-        public List<Movie> Movies { get; set; }
+        virtual public Privilege Privilege { get; set; }
+        virtual public List<Director> Directors { get; set; }
+        virtual public List<Movie> Movies { get; set; }
 
         [NotMapped]
         public string password { get; set; }

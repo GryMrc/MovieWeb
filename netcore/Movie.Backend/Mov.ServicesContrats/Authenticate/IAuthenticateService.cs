@@ -1,4 +1,5 @@
 ﻿using Mov.Core;
+using Mov.DataModels.ServiceResponse;
 using Mov.DataModels.User;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,10 @@ namespace Mov.ServicesContrats.Authenticate
    [ServiceContract]
    public  interface IAuthenticateService:IBase
     {
-        void myfunc(string x);
 
         
-        Task<string> Register(User my); // sadece username ve password olacak.
+        Task<ServiceResponse> Register(User user);
+        Task<ServiceResponse> Login(User user);
 
     }
 }
