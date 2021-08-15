@@ -33,11 +33,8 @@ namespace Mov.Services
             };
             services
                    .AddDbContext<ApplicationDbContext>(contextOptions)
-                   .AddCodeFirstGrpc(options =>
-                   {
-                       options.Interceptors.Add(typeof(ErrorHandlingInterceptor));
-                       options.Interceptors.Add(typeof(CallContextInterceptor));
-                   });
+                   .AddCodeFirstGrpc();
+                   
             
 
         }

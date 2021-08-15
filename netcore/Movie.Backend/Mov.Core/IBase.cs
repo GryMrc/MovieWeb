@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Core
 {
-    public interface Interface1
+    public interface IBase
     {
     }
 }

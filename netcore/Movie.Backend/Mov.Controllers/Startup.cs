@@ -33,11 +33,7 @@ namespace Mov.Controllers
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddTransient<Interface2, ProtobufSerializer>();
-            services.AddOptions()
-                .AddSingleton<Class4>()
-                .AddTransient<Class5>()
+            services
                 .addservicegrp("http://localhost:5000");
             services.AddCors(options => options.AddDefaultPolicy(builder =>
             {

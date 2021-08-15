@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Mov.ServicesContrats.Authenticate
 {
    [ServiceContract]
-   public  interface IAuthenticateService:Interface1
+   public  interface IAuthenticateService:IBase
     {
         void myfunc(string x);
 

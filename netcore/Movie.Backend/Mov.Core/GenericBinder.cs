@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Core
 {
-        public class Class3 : ServiceBinder
+        public class GenericBinder : ServiceBinder
         {
             protected override string GetDefaultName(Type contractType)
             {
