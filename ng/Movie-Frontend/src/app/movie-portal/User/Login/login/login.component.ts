@@ -28,10 +28,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-
     this.userService.login(this.user).subscribe(result => {
-      if(!result.Success){
-        UserService.isAuthenticate = true;
+      if(result.success){
+        localStorage.setItem('isAuthenticate','true');
         this.router.navigate(['']);
       }
     },

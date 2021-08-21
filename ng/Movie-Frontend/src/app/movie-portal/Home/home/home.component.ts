@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Router } from '@angular/router';
-import { User } from 'src/app/movie-library/User/model/user.model';
-import { UserService } from 'src/app/movie-library/User/service/user.service';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +11,16 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    if(!UserService.isAuthenticate){
-      this.router.navigate(['login']);
+    if(localStorage.getItem('isAuthenticate') != null){
+      const isAuthenticate = localStorage.getItem("isAuthenticate");
+      if(isAuthenticate == 'false'){
+        this.router.navigate(['login']);
+      }
     }
   }
 
+  onLogOut(){
+    localStorage.setItem('isAuthenticate','false');
+    this.router.navigate(['login']);
+  }
 }

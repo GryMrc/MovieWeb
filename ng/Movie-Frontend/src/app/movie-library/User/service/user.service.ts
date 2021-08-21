@@ -6,7 +6,6 @@ import { User } from "../model/user.model";
 @Injectable()
 export class UserService {
 
-    static isAuthenticate = false;
     constructor
         (private httpClient: HttpClient) {
 
